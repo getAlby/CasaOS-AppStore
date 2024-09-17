@@ -10,11 +10,11 @@ services:
     x-casaos:
       envs:
       ports:
-        - container: '8080'
+        - container: '8029'
           description:
-            en_us: 'Container Port: 8088'
+            en_us: 'Container Port: 8029'
     ports:
-      - 8080:8080
+      - 8029:8080
     volumes:
       - /DATA/AppData/$AppID/data:/data
 x-casaos:
