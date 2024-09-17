@@ -1,0 +1,39 @@
+name: alby-albyhub
+services:
+  app:
+    image: ghcr.io/getalby/hub:v1.8.0
+    restart: unless-stopped
+    environment:
+      WORK_DIR: "/data/albyhub"
+      COOKIE_SECRET: "742375a0f444d6de9c692aa83ac43c10"
+      LOG_EVENTS: "true"
+    x-casaos:
+      envs:
+      ports:
+        - container: '8080'
+          description:
+            en_us: 'Container Port: 8088'
+    ports:
+      - 8080:8080
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: app
+  description:
+    en_us: >-
+      Alby Hub is your gateway to Bitcoin world and allows you to use your Umbrel lightning node with the growing number of exciting bitcoin and nostr applications.
+      Connect any bitcoin app to your Hub for self-custodial payments anywhere — websites, mobile apps, desktop apps, games, CLI tools and more.
+      Use Alby Hub to manage your lightning channels through one sleek, user-friendly interface.
+  tagline:
+    en_us: Your Hub to connect to the Bitcoin world
+  developer: Alby
+  author: bumi
+  icon: https://raw.githubusercontent.com/getAlby/umbrel-community-app-store/master/alby-albyhub/images/icon.svg
+  thumbnail: https://raw.githubusercontent.com/getAlby/umbrel-community-app-store/master/alby-albyhub/images/wallet.png
+  title:
+    en_us: Alby Hub
+  category: Bitcoin
+  port_map: '80'
