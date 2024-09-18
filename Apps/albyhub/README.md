@@ -6,4 +6,4 @@ Use Alby Hub to manage your lightning channels through one sleek, user-friendly 
 
 ---
 
-**WebUI Port:** `8080`
+**WebUI Port:** `8029`
